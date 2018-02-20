@@ -12,46 +12,54 @@
 <body>
   <section class="container-fluid">
     <div class="row">
-      <div class="col-3 offset-3">
+      <!-- input search -->
+      <div class="col-3 offset-1">
+        <nav class="navbar navbar-light">
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="buscar tema" aria-label="Search">
+          </form>
+        </nav>
+      </div>
+      <!-- Título -->
+      <div class="col-3">
         <h1 class="text-center">FORO COOL</h1>
       </div>
+      <!-- Botón de Crear Tema -->
       <div class="col-1">
-        <button type="button" class="btn btn-secondary">Crear Tema</button>
+        <button id="create-btn" type="button" class="btn btn-success" data-toggle="modal" data-target="#form-modal">Crear Tema</button>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-5 offset-md-1">
-        <p>Encontré esto en internet <span>por Linda</span></p>
-      </div>
-      <div class="col-md-6">
-          <p>Numero de respuestas<span>3</span></p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-5 offset-md-1 topic">
-          <!-- <p class="topic">Encontré esto en internet <span class="author">por Linda</span></p> -->
-        </div>
-        <div class="col-md-6 response-count">
-            <!-- <p>Numero de respuestas<span>3</span></p> -->
-          </div>
-      </div>
-      <!-- <div class="row">
-          <div class="col-md-5 offset-md-1">
-            <p>Encontré esto en internet <span>por Linda</span></p>
-          </div>
-          <div class="col-md-6">
-              <p>Numero de respuestas<span>3</span></p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-5 offset-md-1">
-              <p>Encontré esto en internet <span>por Linda</span></p>
-            </div>
-            <div class="col-md-6">
-                <p>Numero de respuestas<span>3</span></p>
-              </div>
-          </div> -->
   </section>
+    <!-- SECCION de CONTENIDO -->
+  <section class="container-fluid">
+    <div class="row">
+      <div class="col-md-5 offset-md-1 topic">
+        <!-- <p class="topic">Encontré esto en internet <span class="author">por Linda</span></p> -->
+      </div>
+      <div class="col-md-6 response-count">
+        <!-- <p>Numero de respuestas<span>3</span></p> -->
+      </div>
+    </div>
+  </section>
+  <!-- Fin de SECCION de CONTENIDO -->
+<!-- MODAL para CREAR TEMA -->
+  <div class="modal" id="form-modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form class="m-3">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Usuario</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Tema</label>
+                  <input type="text" class="form-control" id="exampleInputPassword1">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+      </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  

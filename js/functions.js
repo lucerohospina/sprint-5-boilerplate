@@ -26,6 +26,7 @@
 var $topic = $('.topic');
 var $auhtor = $('.author');
 var $responses = $('.response-count');
+var $createTopicBtn = $('#create-btn');
 
 $.ajax({
     url: 'http://examen-laboratoria-sprint-5.herokuapp.com/topics'
@@ -33,18 +34,23 @@ $.ajax({
 .fail(handleError);
 
 function handleSuccess(data) {
-    console.log(data);
-    console.log(data.length);
+    // console.log(data);
+    // console.log(data.length);
         for(i=0; i<data.length; i++) {
         var topicTitle = data[i].content;
         var authorUser = data[i].author_name;
         var responsesCount = data[i].responses_count;
-        console.log(data[i]);
-        $topic.append(`<p>${topicTitle}<span>${authorUser}</span></p>`);
-        $responses.append(`<p>Numero de respuestas<span>${responsesCount}</span></p>`);
+        // console.log(data[i]);
+        $topic.append(`<p>${topicTitle} por: <span>${authorUser}</span></p>`);
+        $responses.append(`<p>Numero de respuestas: <span>${responsesCount}</span></p>`);
     }
 }
 
 function handleError() {
     consol.log('something went wrong');
 }
+
+$createTopicBtn.click(function(){
+    console.log('click');
+    
+})
