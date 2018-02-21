@@ -16,7 +16,7 @@ var $createTopicBtn = $('#create-btn');
 
 
 $.ajax({
-    url: 'http://examen-laboratoria-sprint-5.herokuapp.com/topics'
+    url: 'https://examen-laboratoria-sprint-5.herokuapp.com/topics'
 }).done(handleSuccess)
 .fail(handleError);
 
@@ -59,7 +59,7 @@ $createTopicBtn.click(function(event){
 
     $.ajax({
         type: 'POST',
-        url: 'http://examen-laboratoria-sprint-5.herokuapp.com/topics',
+        url: 'https://examen-laboratoria-sprint-5.herokuapp.com/topics',
         data: body,
         success: addingEntrance
     })
@@ -96,7 +96,7 @@ $('#topic-search').keyup(function(){
 
 // var request = new XMLHttpRequest();
 
-// request.open('GET', 'http://examen-laboratoria-sprint-5.herokuapp.com/topics/763/responses');
+// request.open('GET', 'https://examen-laboratoria-sprint-5.herokuapp.com/topics/763/responses');
 
 // request.onreadystatechange = function () {
 //   if (this.readyState === 4) {
