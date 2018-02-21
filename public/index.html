@@ -1,44 +1,42 @@
-<!-- mostrar en este HTML los TOPICS de /topics -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Acme|Comfortaa:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css"> 
   <title>Foro de Opinion</title>
 </head>
-<body>
+<body class="bg-info">
   <section class="container-fluid">
     <div class="row">
-      <!-- input search -->
-      <div class="col-3 offset-1">
+      <!-- Título -->
+      <div class="col-12 col-sm-6 col-md-4 offset-md-4 mt-4">
+        <h1 class="text-center title">FORO COOL</h1>
+      </div>
+    </div>
+    <div class="row mb-3">
+    <!-- input search -->
+      <div class="col-12 col-sm-4 offset-sm-2">
         <nav class="navbar navbar-light">
           <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="buscar tema" aria-label="Search">
+            <input id="topic-search" class="form-control mr-sm-2" type="search" placeholder="buscar tema" aria-label="Search">
           </form>
         </nav>
       </div>
-      <!-- Título -->
-      <div class="col-3">
-        <h1 class="text-center">FORO COOL</h1>
-      </div>
-      <!-- Botón de Crear Tema -->
-      <div class="col-1">
-        <button id="create-btn" type="button" class="btn btn-success" data-toggle="modal" data-target="#form-modal">Crear Tema</button>
-      </div>
+<!-- Botón de Crear Tema -->
+     <div class="col-12 col-sm-4 offset-sm-1">
+       <button type="button" class="btn btn-success" data-toggle="modal" data-target="#form-modal">Crear Tema</button>
+     </div>
     </div>
   </section>
     <!-- SECCION de CONTENIDO -->
   <section class="container-fluid">
-    <div class="row">
-      <div class="col-md-5 offset-md-1 topic">
-        <!-- <p class="topic">Encontré esto en internet <span class="author">por Linda</span></p> -->
-      </div>
-      <div class="col-md-6 response-count">
-        <!-- <p>Numero de respuestas<span>3</span></p> -->
-      </div>
+    <div class="row posts">
+      <div class="col-12 topic">
+        
     </div>
   </section>
   <!-- Fin de SECCION de CONTENIDO -->
@@ -49,19 +47,19 @@
             <form class="m-3">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Usuario</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input type="text" class="form-control" id="author-name" aria-describedby="emailHelp">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Tema</label>
-                  <input type="text" class="form-control" id="exampleInputPassword1">
+                  <input type="text" class="form-control" id="new-topic">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button id="create-btn" class="btn btn-primary">ENVIAR</button>
               </form>
         </div>
       </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
   <script src="js/functions.js"></script>
   <script src="js/main.js"></script>
