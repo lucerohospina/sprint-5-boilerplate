@@ -44,7 +44,7 @@ function handleSuccess(data) {
 }
 
 function handleError() {
-    consol.log('something went wrong');
+    console.log('something went wrong');
 }
 
 $createTopicBtn.click(function(event){
