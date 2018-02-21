@@ -16,20 +16,20 @@ var $createTopicBtn = $('#create-btn');
 
 
 $.ajax({
-    url: 'https://examen-laboratoria-sprint-5.herokuapp.com/topics'
+  url: 'https://examen-laboratoria-sprint-5.herokuapp.com/topics'
 }).done(handleSuccess)
-.fail(handleError);
+  .fail(handleError);
 
 function handleSuccess(data) {
-    // console.log(data);
-    // console.log(data.length);
-        var jumbotronContent = '';
-        for(i=0; i<data.length; i++) {
-        var topicTitle = data[i].content;
-        var authorUser = data[i].author_name;
-        var responsesCount = data[i].responses_count;
-        // console.log(data[i]);
-        jumbotronContent += `
+  // console.log(data);
+  // console.log(data.length);
+  var jumbotronContent = '';
+  for (i = 0; i < data.length; i++) {
+    var topicTitle = data[i].content;
+    var authorUser = data[i].author_name;
+    var responsesCount = data[i].responses_count;
+    // console.log(data[i]);
+    jumbotronContent += `
         <div class="card mb-3">
         <div class="card-body">
           <p class="card-title"><strong>TEMA</strong>: ${topicTitle}</p>
@@ -38,61 +38,61 @@ function handleSuccess(data) {
         <p class="card-text"><strong>Respuestas</strong>: ${responsesCount}</p>
         </div>
         </div>
-        `
-    };
-    $topic.html(jumbotronContent);
+        `;
+  };
+  $topic.html(jumbotronContent);
 }
 
 function handleError() {
-    console.log('something went wrong');
+  console.log('something went wrong');
 }
 
-$createTopicBtn.click(function(event){
-    // event.preventDefault();
-    var $inputAuthorName = $('#author-name');
-    var $inputNewTopic = $('#new-topic');
+$createTopicBtn.click(function(event) {
+  // event.preventDefault();
+  var $inputAuthorName = $('#author-name');
+  var $inputNewTopic = $('#new-topic');
     
-    var body = {
-        author_name: $inputAuthorName.val(),
-        content: $inputNewTopic.val()
-    }
+  var body = {
+    author_name: $inputAuthorName.val(),
+    content: $inputNewTopic.val()
+  };
 
-    $.ajax({
-        type: 'POST',
-        url: 'https://examen-laboratoria-sprint-5.herokuapp.com/topics',
-        data: body,
-        success: addingEntrance
-    })
+  $.ajax({
+    type: 'POST',
+    url: 'https://examen-laboratoria-sprint-5.herokuapp.com/topics',
+    data: body,
+    success: addingEntrance
+  });
 
-    function addingEntrance(newTopic) {
-        console.log(JSON.stringify(newTopic));
-        console.log(newTopic);
-        console.log(newTopic.author_name);
-        console.log(newTopic.content);
-        // $(document).attr('location').href='index.html'
-        // alert('Tema creado');
-        // $('#form-modal').modal('hide');
+  function addingEntrance(newTopic) {
+    console.log(JSON.stringify(newTopic));
+    console.log(newTopic);
+    console.log(newTopic.author_name);
+    console.log(newTopic.content);
+    // $(document).attr('location').href='index.html'
+    // alert('Tema creado');
+    // $('#form-modal').modal('hide');
         
-        // var bodyString = JSON.stringify(body);
-        // console.log(bodyString.author_name);
-        // console.log(bodyString.name);
-        // console.log(newData.name);
+    // var bodyString = JSON.stringify(body);
+    // console.log(bodyString.author_name);
+    // console.log(bodyString.name);
+    // console.log(newData.name);
+  }
+});
+
+
+$('#topic-search').keyup(function() {
+  console.log($(this).val());
+  var topicSearched = $(this).val();
+  $('.card').hide();
+  $('.card').each(function() {
+    console.log($(this).text());
+    var savingData = $(this).text();
+    if (savingData.indexOf(topicSearched) > -1) {
+      $(this).show();
     }
-})
-
-
-$('#topic-search').keyup(function(){
-    console.log($(this).val());
-    var topicSearched = $(this).val();
-    $('.card').hide();
-    $('.card').each(function() {
-        console.log($(this).text())
-        var savingData = $(this).text();
-        if (savingData.indexOf(topicSearched) > -1) {
-            $(this).show();
-        }
-    })
-})
+  });
+});
 
 // var request = new XMLHttpRequest();
 
